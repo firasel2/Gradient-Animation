@@ -1,11 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import { motion } from "framer-motion";
+import Head from "next/head";
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -14,110 +11,70 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-600 to-rose-700 relative">
+        <h2 className="text-8xl text-center leading-[10rem] font-bold capitalize text-white">
+          Design with purpose,
+          <br /> code with passion. <br />
+          Keep pushing boundaries,
+          <br /> innovate without limits.
+        </h2>
+
+        <div
+          className="absolute h-full w-full top-0 left-0 flex items-center"
+        >
+          <motion.div
+            initial={{
+              backgroundImage:
+                "radial-gradient(circle at 600px 100px, transparent 50px, rgba(0, 0, 0, 1) 100px)",
+            }}
+            animate={{
+              backgroundImage:["radial-gradient(circle at 200px 200px, transparent 50px, rgba(0, 0, 0, 1) 100px)", "radial-gradient(circle at 300px 200px, transparent 50px, rgba(0, 0, 0, 1) 100px)","radial-gradient(circle at 300px 300px, transparent 50px, rgba(0, 0, 0, 1) 100px)","radial-gradient(circle at 500px 500px, transparent 50px, rgba(0, 0, 0, 1) 100px)","radial-gradient(circle at 300px 1500px, transparent 50px, rgba(0, 0, 0, 1) 100px)"],
+              display:"block",
+              transitionEnd:{display:'none'}
+            }}
+            transition={{ duration: 2}}
+            className="w-full h-full hidden"
+          ></motion.div>
+         <motion.div
+            initial={{
+              backgroundImage:
+                "radial-gradient(circle at 500px 500px, transparent 50px, rgba(0, 0, 0, 1) 100px)",
+            }}
+            animate={{
+              backgroundImage:["radial-gradient(circle at 400px 400px, transparent 60px, rgba(0, 0, 0, 1) 150px)", "radial-gradient(circle at 300px 400px, transparent 60px, rgba(0, 0, 0, 1) 150px)","radial-gradient(circle at 300px 300px, transparent 60px, rgba(0, 0, 0, 1) 150px)","radial-gradient(circle at 150px 150px, transparent 60px, rgba(0, 0, 0, 1) 150px)", "radial-gradient(circle at 150px -150px, transparent 60px, rgba(0, 0, 0, 1) 150px)"],
+              display:"block",
+              transitionEnd:{display:'none'}
+            }}
+            transition={{ duration: 2}}
+            className="w-full h-full hidden"
+          ></motion.div>
+          <motion.div
+            initial={{
+              backgroundImage:
+                "radial-gradient(circle at 100px 100px, transparent 50px, rgba(0, 0, 0, 1) 100px)",
+            }}
+            animate={{
+              backgroundImage:["radial-gradient(circle at 200px 200px, transparent 80px, rgba(0, 0, 0, 1) 160px)", "radial-gradient(circle at 300px 200px, transparent 80px, rgba(0, 0, 0, 1) 160px)","radial-gradient(circle at 300px 300px, transparent 80px, rgba(0, 0, 0, 1) 160px)","radial-gradient(circle at 500px 500px, transparent 80px, rgba(0, 0, 0, 1) 160px)", "radial-gradient(circle at 5000px 5000px, transparent 80px, rgba(0, 0, 0, 1) 160px)"],
+              display:"block",
+              transitionEnd:{display:'none'}
+            }}
+            transition={{ duration: 2 }}
+            className="w-full h-full hidden"
+          ></motion.div>
         </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+      </div>
     </>
-  )
+  );
+}
+
+{
+  /* <svg width="1440" height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1440" height="1024" fill="url(#paint0_radial_1_3)"/>
+<defs>
+<radialGradient id="paint0_radial_1_3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(331 386) rotate(-98.6649) scale(233.161 231.291)">
+<stop stop-opacity="0"/>
+<stop offset="1"/>
+</radialGradient>
+</defs>
+</svg> */
 }
