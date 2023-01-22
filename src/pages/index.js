@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { LazyMotion, m as motion, domAnimation } from "framer-motion";
 import Head from "next/head";
 
 export default function Home() {
@@ -10,88 +10,90 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-600 to-rose-700 relative gap-0">
-        <motion.h2
-          animate={{
-            background: "linear-gradient(to bottom right,#9333ea,#be123c)",
-            "-webkit-background-clip": "text",
-            "-webkit-text-fill-color": "transparent",
-            transitionEnd: {
-              background: "linear-gradient(to bottom right,#fff,#fff)",
-            },
-          }}
-          transition={{ duration: 2.5 }}
-          className="text-xl sm:text-3xl md:text-6xl 2xl:text-8xl text-center leading-9 sm:leading-[3rem] md:leading-[6rem] 2xl:leading-[10rem] font-bold capitalize text-white w-fit relative z-10 p-0 m-0"
-        >
-          Design with purpose,
-          <br /> code with passion. <br />
-          Keep pushing boundaries,
-          <br /> innovate without limits.
-          <div className="absolute h-full w-full top-0 left-0 flex items-center m-0 p-0 gap-0">
-            <motion.div
-              initial={{
-                backgroundImage:
-                  "radial-gradient(circle at 22% 20%, transparent 10%, rgba(0, 0, 0, 1) 12%)",
-              }}
-              animate={{
-                backgroundImage:
-                  "radial-gradient(circle at 40% 80%, transparent 12%, rgba(0, 0, 0, 1) 20%)",
-                display: "block",
-                transitionEnd: { display: "none" },
-              }}
-              transition={{ duration: 2.5 }}
-              className="w-full h-full hidden m-0 p-0"
-            ></motion.div>
-            <motion.div
-              animate={{
-                display: "block",
-                transitionEnd: { display: "none" },
-              }}
-              transition={{ duration: 2.5 }}
-              className="hidden md:!block w-full h-full m-0 p-0"
-            >
+      <LazyMotion features={domAnimation}>
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-600 to-rose-700 relative gap-0">
+          <motion.h2
+            animate={{
+              background: "linear-gradient(to bottom right,#9333ea,#be123c)",
+              "-webkit-background-clip": "text",
+              "-webkit-text-fill-color": "transparent",
+              transitionEnd: {
+                background: "linear-gradient(to bottom right,#fff,#fff)",
+              },
+            }}
+            transition={{ duration: 2.5, ease: "linear" }}
+            className="text-xl sm:text-3xl md:text-6xl 2xl:text-8xl text-center leading-9 sm:leading-[3rem] md:leading-[6rem] 2xl:leading-[10rem] font-bold capitalize text-white w-fit relative z-10 p-0 m-0"
+          >
+            Design with purpose,
+            <br /> code with passion. <br />
+            Keep pushing boundaries,
+            <br /> innovate without limits.
+            <div className="absolute h-full w-full top-0 left-0 flex items-center m-0 p-0 gap-0">
               <motion.div
                 initial={{
                   backgroundImage:
-                    "radial-gradient(circle at 20% 13%, transparent 10%, rgba(0, 0, 0, 1) 15%)",
+                    "radial-gradient(circle at 22% 20%, transparent 10%, rgba(0, 0, 0, 1) 12%)",
                 }}
                 animate={{
                   backgroundImage:
-                    "radial-gradient(circle at 30% 80%, transparent 15%, rgba(0, 0, 0, 1) 20%)",
+                    "radial-gradient(circle at 40% 80%, transparent 12%, rgba(0, 0, 0, 1) 20%)",
                   display: "block",
                   transitionEnd: { display: "none" },
                 }}
-                transition={{ duration: 2.5 }}
+                transition={{ duration: 2.5, ease: "linear" }}
                 className="w-full h-full hidden m-0 p-0"
               ></motion.div>
-            </motion.div>
-            <motion.div
-              initial={{
-                backgroundImage:
-                  "radial-gradient(circle at 50% 80%, transparent 10%, rgba(0, 0, 0, 1) 15%)",
-              }}
-              animate={{
-                backgroundImage:
-                  "radial-gradient(circle at 35% 25%, transparent 15%, rgba(0, 0, 0, 1) 25%)",
-                display: "block",
-                transitionEnd: { display: "none" },
-              }}
-              transition={{ duration: 2.5 }}
-              className="w-full h-full hidden m-0 p-0"
-            ></motion.div>
-          </div>
-        </motion.h2>
-        <motion.div
-          initial={{ display: "block" }}
-          animate={{
-            display: "block",
-            background: "#000",
-            transitionEnd: { display: "none" },
-          }}
-          transition={{ duration: 2.5 }}
-          className="bg-black w-full h-full absolute top-0 left-0 z-[0] hidden m-0 p-0"
-        ></motion.div>
-      </div>
+              <motion.div
+                animate={{
+                  display: "block",
+                  transitionEnd: { display: "none" },
+                }}
+                transition={{ duration: 2.5, ease: "linear" }}
+                className="hidden md:!block w-full h-full m-0 p-0"
+              >
+                <motion.div
+                  initial={{
+                    backgroundImage:
+                      "radial-gradient(circle at 20% 13%, transparent 10%, rgba(0, 0, 0, 1) 15%)",
+                  }}
+                  animate={{
+                    backgroundImage:
+                      "radial-gradient(circle at 30% 80%, transparent 15%, rgba(0, 0, 0, 1) 20%)",
+                    display: "block",
+                    transitionEnd: { display: "none" },
+                  }}
+                  transition={{ duration: 2.5, ease: "linear" }}
+                  className="w-full h-full hidden m-0 p-0"
+                ></motion.div>
+              </motion.div>
+              <motion.div
+                initial={{
+                  backgroundImage:
+                    "radial-gradient(circle at 50% 80%, transparent 10%, rgba(0, 0, 0, 1) 15%)",
+                }}
+                animate={{
+                  backgroundImage:
+                    "radial-gradient(circle at 35% 25%, transparent 15%, rgba(0, 0, 0, 1) 25%)",
+                  display: "block",
+                  transitionEnd: { display: "none" },
+                }}
+                transition={{ duration: 2.5, ease: "linear" }}
+                className="w-full h-full hidden m-0 p-0"
+              ></motion.div>
+            </div>
+          </motion.h2>
+          <motion.div
+            initial={{ display: "block" }}
+            animate={{
+              display: "block",
+              background: "#000",
+              transitionEnd: { display: "none" },
+            }}
+            transition={{ duration: 2.5, ease: "linear" }}
+            className="bg-black w-full h-full absolute top-0 left-0 z-[0] hidden m-0 p-0"
+          ></motion.div>
+        </div>
+      </LazyMotion>
     </>
   );
 }
