@@ -10,22 +10,24 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-600 to-rose-700 relative">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-600 to-rose-700 relative gap-0">
         <motion.h2
           animate={{
-            backgroundImage: "linear-gradient(to bottom right,#9333ea,#be123c)",
+            background: "linear-gradient(to bottom right,#9333ea,#be123c)",
+            "-webkit-background-clip": "text",
+            "-webkit-text-fill-color": "transparent",
             transitionEnd: {
-              backgroundImage: "none",
+              background: "linear-gradient(to bottom right,#fff,#fff)",
             },
           }}
-          transition={{ duration: 2 }}
-          className="text-5xl md:text-6xl 2xl:text-8xl text-center leading-[4rem] md:leading-[6rem] 2xl:leading-[10rem] font-bold capitalize text-white w-fit relative z-10"
+          transition={{ duration: 2.5 }}
+          className="text-xl sm:text-3xl md:text-6xl 2xl:text-8xl text-center leading-9 sm:leading-[3rem] md:leading-[6rem] 2xl:leading-[10rem] font-bold capitalize text-white w-fit relative z-10 p-0 m-0"
         >
           Design with purpose,
           <br /> code with passion. <br />
           Keep pushing boundaries,
           <br /> innovate without limits.
-          <div className="absolute h-full w-full top-0 left-0 flex items-center">
+          <div className="absolute h-full w-full top-0 left-0 flex items-center m-0 p-0 gap-0">
             <motion.div
               initial={{
                 backgroundImage:
@@ -37,23 +39,32 @@ export default function Home() {
                 display: "block",
                 transitionEnd: { display: "none" },
               }}
-              transition={{ duration: 2 }}
-              className="w-full h-full hidden"
+              transition={{ duration: 2.5 }}
+              className="w-full h-full hidden m-0 p-0"
             ></motion.div>
             <motion.div
-              initial={{
-                backgroundImage:
-                  "radial-gradient(circle at 20% 13%, transparent 10%, rgba(0, 0, 0, 1) 15%)",
-              }}
               animate={{
-                backgroundImage:
-                  "radial-gradient(circle at 30% 80%, transparent 15%, rgba(0, 0, 0, 1) 20%)",
                 display: "block",
                 transitionEnd: { display: "none" },
               }}
-              transition={{ duration: 2 }}
-              className="w-full h-full hidden"
-            ></motion.div>
+              transition={{ duration: 2.5 }}
+              className="hidden md:!block w-full h-full m-0 p-0"
+            >
+              <motion.div
+                initial={{
+                  backgroundImage:
+                    "radial-gradient(circle at 20% 13%, transparent 10%, rgba(0, 0, 0, 1) 15%)",
+                }}
+                animate={{
+                  backgroundImage:
+                    "radial-gradient(circle at 30% 80%, transparent 15%, rgba(0, 0, 0, 1) 20%)",
+                  display: "block",
+                  transitionEnd: { display: "none" },
+                }}
+                transition={{ duration: 2.5 }}
+                className="w-full h-full hidden m-0 p-0"
+              ></motion.div>
+            </motion.div>
             <motion.div
               initial={{
                 backgroundImage:
@@ -65,8 +76,8 @@ export default function Home() {
                 display: "block",
                 transitionEnd: { display: "none" },
               }}
-              transition={{ duration: 2 }}
-              className="w-full h-full hidden"
+              transition={{ duration: 2.5 }}
+              className="w-full h-full hidden m-0 p-0"
             ></motion.div>
           </div>
         </motion.h2>
@@ -77,8 +88,8 @@ export default function Home() {
             background: "#000",
             transitionEnd: { display: "none" },
           }}
-          transition={{ duration: 2 }}
-          className="bg-black w-full h-full absolute top-0 left-0 z-[0] hidden"
+          transition={{ duration: 2.5 }}
+          className="bg-black w-full h-full absolute top-0 left-0 z-[0] hidden m-0 p-0"
         ></motion.div>
       </div>
     </>
